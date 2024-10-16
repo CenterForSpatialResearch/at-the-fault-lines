@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>At the Fault Lines</title>
+
+        <meta name="application-name" content="FaultLines">
+        <meta name="A geospatial intelligence research project. Developed by Taha Erdem Ozturk at the Center for Spatial Research, Columbia GSAPP.">
+        <meta name="apple-mobile-web-app-title" content="FaultLines">
+        <meta name=”keywords” content="geospatial ai, ai, artificial intelligence, spatial research, architecture, earthquake, risk assessment, columbia gsapp">
+        <meta name=”author” content="Taha Erdem Ozturk">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "about": "A geospatial intelligence research project",
+              "datePublished": "2024-05-29T08:00:00-04:00",
+              "dateModified": "2024-05-29T08:00:00-04:00",
+              "author": [{
+                  "@type": "Person",
+                  "name": "Taha Erdem Ozturk",
+                  "url": "https://tahaerdemozturk.com/"
+                },
+                {
+                   "@type": "Organization",
+                   "name": "Columbia University Center for Spatial Research",
+                   "url": "https://c4sr.columbia.edu"
+                }]
+            }
+        </script>
+
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="theme-color" content="#FFFDDE" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#FFFDDE" media="(prefers-color-scheme: dark)">
+        <link rel="apple-touch-icon" href="/resources/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/fl-favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/fl-favicon-16.png">
+
+        <link rel="stylesheet" href="styles.css">
+
+        
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js'></script>
+
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.typekit.net/oew1nxa.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="map"></div>
+        <div id="geocoder" class="geocoder"></div>
+        <header>
+        <div class="navbar" id="navbar">
+            <div class="navbar-left">
+                <a href="/index.html" class="navbar-item-cu-short">Research</a>
+                <a href="/index.html" class="navbar-item-cu-medium">At the Fault Lines</a>
+                <a href="/index.html" class="navbar-item-cu-long">At the Fault Lines</a>
+            </div>
+            <div class="navbar-right">
+                <a href="/index.html" class="navbar-item">Research</a>
+                <a href="#chp07" class="navbar-item nbit-short">Map</a>
+                <a href="#chp07" class="navbar-item nbit-medium">Interactive Map</a>
+                <a href="/about.html" class="navbar-item">About</a>
+            </div>
+        </div>
+
+        </header>
+        <section class="title-byline" id="#introduction">
+            <div class="byline-dateline" id="byLine"><p class="byline">By <a href="http://tahaerdemozturk.com" class="byline-author byline-href"  itemprop="author creator" itemtype="https://schema.org/Person">Taha Erdem Ozturk</a> for <a href="https://c4sr.columbia.edu" class="byline-author byline-href" itemprop="author creator" itemtype="https://schema.org/Organization">Center for Spatial Research</a>,</p><p class="byline">Columbia GSAPP</p><p class="dateline">Published on: <time class="dateline" datetime="2024-11-15T13:00:00-04:00">15 Oct 2024</span></p></div></div>
+        </section>
+        <section class="title-header">
+            <h1 class="title-wrapper main-title" id="mainTitle">At The Fault Lines</h1><div id="overlay"></div>
+        </section>
+        <section class="title-wrapper">
+        </section>
+        <main>
+            <div class="spacer s1"></div>
+            <section class="storyboard" id="SEC01">
+                <div class="textbox-container tb-st tb4">
+                        <div class="tb">
+                            <h3>On </h3><h2 class="tp" id="date-time">February 6, 2023 at 04:17AM</h2><br><h3 class="counter-subtitle">a devastating M7.8 earthquake struck southeastern Turkey.</h3>
+                        </div>
+                </div>
+            </section>
+            <div class="spacer s1q"></div>
+            <div class="spacer s1f2"></div>
+            <div class="spacer s1"></div>
+            <section class="timeline">
+                <div class="timeline-path" style="height:1000px;">
+                    <div class="endpoints top"  id="TL00"></div>
+                </div>
+            </section>
+            <section class="timeline tb-st tb-top" id="TL01">
+                <div class="timeline-path" style="left: 50%; height:100px; margin: 0px; margin-top: -15px; margin-bottom: 25px;"><div class="endpoints bottom" style="margin: 0px; margin-bottom: 0px;"></div>
+                </div>
+                <h4 class="timeline date bottom">FEBRUARY 6, 2023 • 04:17AM</h4>
+                <h4 class="timeline title">M7.8 EARTHQUAKE<br>STRIKES SOUTHEAST TURKEY</h4>
+            </section>
+            
+            <div class="spacer s25"></div>
+
+            <section class="storyboard" id="SEC02">
+                <div class="textbox-container tb-ctr tb4">
+                    <div class="textbox ti tb-align-r">
+                        <h3 class="title quartinary txct">60,000</h3>
+                        <h3 class="title quinary txct">LIVES LOST</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">The combined death toll from these earthquakes is estimated at nearly 60,000 people, with more than 15 million people affected across 11 provinces.</p>
+                        </div>
+                    </div>
+
+                    <div class="spacer s1q"></div>
+
+                    <div class="textbox ti tb-align-l">
+                        <h3 class="title quartinary txct">230,000</h3>
+                        <h3 class="title quinary txct">BUILDINGS COLLAPSED</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">More than 230,000 buildings, housing 520,000 apartments, collapsed. Even newly built, luxury residences marketed to the public as “earthquake-proof” were reduced to rubble.</p>
+                        </div>
+                    </div>
+                    <div class="spacer s1q"></div>
+                    <div class="textbox ti tb-align-l">
+                        <h3 class="title quartinary txct">58%</h3>
+                        <h3 class="title quinary txct">OF THE HISTORICAL CITY OF ANTAKYA<br/>WAS COMPLETELY FLATTENED</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">The cities of Hatay and Kahramanmaraş were among the most severely damaged by the February 6th earthquakes. Historic towns and city-centers, such as the millennia-old city of Antakya, were completely leveled, rendering the city unrecognizable to its residents.</p>
+                        </div>
+                    </div>
+                    <div class="spacer s1q"></div>
+                    <div class="textbox ti tb-align-r">
+                        <h3 class="title quartinary txct">30,000</h3>
+                        <h3 class="title quinary txct">SMALLER QUAKES AND AFTERSHOCKS FOLLOWED<br/>ALL WITHIN 24 HOURS</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">Following the initial 7.8 magnitude earthquake, the region experienced relentless aftershocks—more than 30,000 in total. Some aftershocks reached magnitudes of 6.4, plunging survivors into a state of constant fear and uncertainty. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="spacer s1q"></div>
+
+            <section class="timeline" id="TL02">
+                <h4 class="timeline title">M7.8 EARTHQUAKE<br>STRIKES SOUTHEAST TURKEY</h4>
+                <h4 class="timeline date">FEBRUARY 6, 2023 • 04:17AM</h4>
+                <div class="timeline-path" style="height:3000px;">
+                    <div class="endpoints top"></div>
+                </div>
+            </section>
+            <section class="timeline tb-st tb-top" id="TL03">
+                <div class="timeline-path" style="left: 50%; height:25em; margin-top: -15px; margin-bottom: 25px;">
+                    <div class="endpoints bottom" style="margin: 0px; margin-bottom: 0px;"></div>
+                </div>
+                <h4 class="timeline date">FEBRUARY 6, 2023 • 01:24PM</h4>
+                <h4 class="timeline title">SECOND M7.7 QUAKE<br>OCCURS JUST HOURS LATER</h4>
+            </section>
+
+            <div class="spacer s1"></div>
+
+            <section class="storyboard" id="SEC03">
+                <div class="textbox-container tb-st tb6">
+                    <div class="textbox ti tb-align-r">
+                        <h3 class="title quartinary txct" style="text-transform:none; letter-spacing:-0.05em;">9 Hours</h3>
+                        <h3 class="title quinary txct">TIME BETWEEN THE FIRST<br/>AND THE SECOND EARTHQUAKE</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">
+                                The second major earthquake, considered a powerful aftershock, struck about nine hours later at 1:24 PM local time (10:24 UTC). This was a magnitude 7.7 earthquake centered northwest of Kahramanmaraş.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="spacer s1q"></div>
+                    <div class="textbox ti tb-align-l">
+                        <h3 class="title quartinary txct" style="text-transform: none; margin-top:0.4em; font-size:3.5em;">110,000 km<sup style="font-size:0.5em">2</sup></h3>
+                        <h3 class="title quinary txct">TOTAL LAND AREA OF<br/>THE EARTHQUAKE REGION</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">
+                                The disaster area covered a staggering mass of land, about 110,000 square kilometers (42,000 square miles). If the same earthquake struck the United States, the path of destruction would stretch from Washington D.C. to Boston.                            </p>
+                        </div>
+                    </div>
+                    <div class="spacer s1q"></div>
+                    <div class="textbox ti tb-align-r">
+                        <h3 class="title quartinary txct" style="text-transform: none; margin-top:0.4em; font-size:3.5em;">$163.3 Billion</h3>
+                        <h3 class="title quinary txct">ESTIMATED COST OF DAMAGE</h3>
+                        <div class="tb">
+                            <p class="tp mgn-btm-1p5">
+                                The cost of the disaster was estimated at over $163.6 billion, with the greatest damage across southern and central Turkey, as well as northern and western Syria.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="spacer s1h"></div>
+            <section class="fs fschctr" style="z-index: 100" id="FS00">
+                <p class="fs-chpid" id="chp01">CHAPTER 01</p>
+                <h2 class="fs-title" id="fs00Title">February 6</h2>
+            </section>
+            <section class="fs fs-underlay" id="FS01">
+                <div class="text-container">
+                    <p class="c-pg">On February 6, 2023, two consecutive earthquakes with magnitudes of 7.8 and 7.7 struck southern Turkey and northern Syria, resulting in the deaths of more than 60,000 people. Now named as the Kahramanmaraş Earthquakes, largest since the 1939 Erzincan Earthquake of the same magnitude, is the second most powerful ever recorded in the region. Affecting 14 million people and leaving 1.5 million homeless across 11 provinces, it is now recognized as the deadliest natural disaster in the history of Turkey.</p>
+                </div>
+                <figure class="image-container-fullwidth mgn-sds-auto mgn-top-min-30 mgn-btm-10" style="align-self:center;">
+                    <img src="/resources/images/turkey-antakya-interactivemap-bl-nytimes.gif" alt="A Drone Shot Through the Streets of Antakya by NYTimes" class="lct" width="85%">
+                    <figcaption class="mono">A drone shot through the historic center of Antakya after the earthquake, showing the extent of destruction.<br/> Visual investigation by <a href="https://www.nytimes.com/interactive/2023/03/22/world/middleeast/turkey-earthquake-antakya.html">the New York Times</a>.</figcaption>
+                </figure>
+
+                <div class="text-container">
+                    <p class="c-pg">The earthquake region, encompassing the 11 southeastern provinces of Kahramanmaraş, Hatay, Osmaniye, Adıyaman, Gaziantep, Şanlıurfa, Diyarbakır, Malatya, Kilis, Adana, and Elazığ, totals up to over 110,000 square kilometers (42,000 square miles) - nearly the same size as the neighboring Bulgaria. This is equivalent to stretching from Washington, D.C. to Boston, MA, encompassing the entire northeastern metropolitan region of the United States.</p>
+                </div>
+
+                <figure class="image-container-fullwidth mgn-sds-auto mgn-top-min-50 mgn-btm-10" style="align-self:center;">
+                    <img src="/resources/images/usnortheast-turkey-comp-sm-anim-bl.gif" alt="US Northeast compared to Turkey earthquake region of the Southeast" class="xlct" width="95%">
+                    <figcaption class="mono">The earthquake region is roughly as big as the Northeast United States<br/>From Washington, D.C. to Boston, MA.</figcaption>
+                </figure>
+
+                <div class="text-container">
+                    <p class="c-pg">In Hatay province, the historic center of Antakya is now nearly uninhabitable. The city, which has stood for millennia, has been flattened, leaving it almost unrecognizable. The extent of the destruction has driven nearly all residents away, transforming familiar streets and landmarks into a stark, altered landscape. In Kahramanmaraş, the historic district has been decimated, leaving once-vibrant neighborhoods in ruins. Similarly, Gaziantep, known for its rich history and architectural heritage, has seen extensive damage to its old city center, including the Gaziantep Castle—originally built by the Hittite Empire and later expanded by the Romans—and its traditional markets. Despite more than a year of reconstruction efforts, most of these cities remain unrecognizable to more than 500,000 people who once called them home.</p>
+                </div>
+
+                <div class="glide" style="text-align:center;">
+                    <div class="glide__track" data-glide-el="track">
+                      <ul class="glide__slides" style="text-align:center;">
+                        <li class="glide__slide"><figcaption class="mono">ANTAKYA, HATAY</figcaption><div class="carousel_dualview"><div><img class="carousel-sat-img" src="https://snapshot.apple-mapkit.com/api/v1/snapshot?center=36.2034%2C36.1606&size=640x640&t=satellite&spn=0.0087%2C0.0108&token=eyJraWQiOiJBMzVBNlFTWlhRIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJKTVM1NVpKNEtRIiwiaWF0IjoxNzI5MDM3NDUwLCJleHAiOjE3Mjk2NjY3OTl9.4jzomBQsEgULOJa31US9vtKtJGFw3YMJS3jMLGFbZsKCygRzhYBajiBdzPnBeLUqEyOreqcrwfbdDEOpHjGzgw" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">BEFORE</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">APPLE MAPS</figcaption></div><div><img class="carousel-sat-img" src="/resources/images/sat/A-ANT-01.png" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">AFTER</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">GOOGLE, ©2024 AIRBUS</figcaption></div></div></li>
+                        <li class="glide__slide"><figcaption class="mono">ANTAKYA, HATAY</figcaption><div class="carousel_dualview"><div><img class="carousel-sat-img" src="https://snapshot.apple-mapkit.com/api/v1/snapshot?center=36.2108%2C36.1499&size=640x640&t=satellite&spn=0.0036%2C0.0045&token=eyJraWQiOiJBMzVBNlFTWlhRIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJKTVM1NVpKNEtRIiwiaWF0IjoxNzI5MDM3NDUwLCJleHAiOjE3Mjk2NjY3OTl9.4jzomBQsEgULOJa31US9vtKtJGFw3YMJS3jMLGFbZsKCygRzhYBajiBdzPnBeLUqEyOreqcrwfbdDEOpHjGzgw" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">BEFORE</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">APPLE MAPS</figcaption></div><div><img class="carousel-sat-img" src="/resources/images/sat/A-ANT-02.png" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">AFTER</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">GOOGLE, ©2024 AIRBUS</figcaption></div></div></li>
+                        <li class="glide__slide"><figcaption class="mono">12 SUBAT STADIUM, KAHRAMANMARAS</figcaption><div class="carousel_dualview"><div><img class="carousel-sat-img" src="https://snapshot.apple-mapkit.com/api/v1/snapshot?center=37.5777%2C36.9258&size=640x640&t=satellite&spn=0.0105%2C0.0132&token=eyJraWQiOiJBMzVBNlFTWlhRIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJKTVM1NVpKNEtRIiwiaWF0IjoxNzI5MDM3NDUwLCJleHAiOjE3Mjk2NjY3OTl9.4jzomBQsEgULOJa31US9vtKtJGFw3YMJS3jMLGFbZsKCygRzhYBajiBdzPnBeLUqEyOreqcrwfbdDEOpHjGzgw" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">BEFORE</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">APPLE MAPS</figcaption></div><div><img class="carousel-sat-img" src="/resources/images/sat/A-MAR-01.png" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">AFTER</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">GOOGLE, ©2024 AIRBUS</figcaption></div></div></li>
+                        <li class="glide__slide"><figcaption class="mono">ISKENDERUN</figcaption><div class="carousel_dualview"><div><img class="carousel-sat-img" src="https://snapshot.apple-mapkit.com/api/v1/snapshot?center=36.578%2C36.1878&size=640x640&t=satellite&spn=0.0056%2C0.0069&token=eyJraWQiOiJBMzVBNlFTWlhRIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJKTVM1NVpKNEtRIiwiaWF0IjoxNzI5MDM3NDUwLCJleHAiOjE3Mjk2NjY3OTl9.4jzomBQsEgULOJa31US9vtKtJGFw3YMJS3jMLGFbZsKCygRzhYBajiBdzPnBeLUqEyOreqcrwfbdDEOpHjGzgw" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">BEFORE</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">APPLE MAPS</figcaption></div><div><img class="carousel-sat-img" src="/resources/images/sat/A-ISK-01.png" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">AFTER</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">GOOGLE, ©2024 AIRBUS</figcaption></div></div></li>
+                        <li class="glide__slide"><figcaption class="mono">OSMANIYE</figcaption><div class="carousel_dualview"><div><img class="carousel-sat-img" src="https://snapshot.apple-mapkit.com/api/v1/snapshot?center=37.0815%2C36.2465&size=640x640&t=satellite&spn=0.0032%2C0.004&token=eyJraWQiOiJBMzVBNlFTWlhRIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJKTVM1NVpKNEtRIiwiaWF0IjoxNzI5MDM3NDUwLCJleHAiOjE3Mjk2NjY3OTl9.4jzomBQsEgULOJa31US9vtKtJGFw3YMJS3jMLGFbZsKCygRzhYBajiBdzPnBeLUqEyOreqcrwfbdDEOpHjGzgw" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">BEFORE</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">APPLE MAPS</figcaption></div><div><img class="carousel-sat-img" src="/resources/images/sat/A-OSM-01.png" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">AFTER</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">GOOGLE, ©2024 AIRBUS</figcaption></div></div></li>
+                        <li class="glide__slide"><figcaption class="mono">ANTAKYA, HATAY</figcaption><div class="carousel_dualview"><div><img class="carousel-sat-img" src="https://snapshot.apple-mapkit.com/api/v1/snapshot?center=36.2013%2C36.1652&size=640x640&t=satellite&spn=0.0039%2C0.0049&token=eyJraWQiOiJBMzVBNlFTWlhRIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJKTVM1NVpKNEtRIiwiaWF0IjoxNzI5MDM3NDUwLCJleHAiOjE3Mjk2NjY3OTl9.4jzomBQsEgULOJa31US9vtKtJGFw3YMJS3jMLGFbZsKCygRzhYBajiBdzPnBeLUqEyOreqcrwfbdDEOpHjGzgw" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">BEFORE</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">APPLE MAPS</figcaption></div><div><img class="carousel-sat-img" src="/resources/images/sat/A-ANT-03.png" style="align-self:center;" alt=""><figcaption class="mono fgcp-mgn-btm-min-1em">AFTER</figcaption><figcaption class="mono fgcp-mgn-top-none fgcp-cdt">GOOGLE, ©2024 AIRBUS</figcaption></div></div></li>
+                      </ul>
+                    </div>
+                    <div class="glide__bullets carousel_bulletcontainer mgn-top-min-20" data-glide-el="controls[nav]">
+                        <button class="glide__bulle carousel_bullet" data-glide-dir="=0"></button>
+                        <button class="glide__bullet carousel_bullet" data-glide-dir="=1"></button>
+                        <button class="glide__bullet carousel_bullet" data-glide-dir="=2"></button>
+                        <button class="glide__bulle carousel_bullet" data-glide-dir="=3"></button>
+                        <button class="glide__bullet carousel_bullet" data-glide-dir="=4"></button>
+                        <button class="glide__bullet carousel_bullet" data-glide-dir="=5"></button>
+                    </div>
+                    <div class="glide__arrows" style="display: none;" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left carousel_nav mono" data-glide-dir="<">PREV</button>
+                        <button class="glide__arrow glide__arrow--right carousel_nav mono" data-glide-dir=">">NEXT</button>
+                    </div>
+
+                  </div>
+                  <script>
+                    
+                    var glide = new Glide('.glide', {
+                      type: 'carousel',
+                      startAt: 1,
+                      perView: 2,
+                      gap: 30,
+                      autoplay: 4000,
+                      focusAt: 'center',
+                      peek: {
+                        before: 0,
+                        after: 0
+                      },
+                      breakpoints: {
+                        600: {
+                            perView: 1
+                        },
+                        1200: {
+                            perView: 1
+                        },
+                        2200: {
+                            perView: 2
+                        },
+                    }
+                    })
+
+                    glide.mount()
+                </script>
+
+                <div class="text-container">
+                    <p class="c-pg">Yet, Turkey is no stranger to such catastrophic earthquakes, as the country geographically sits on top two major fault zones - the North Anatolian fault zone being one of the most seismically active in the World. 20 years ago when a similarly destructive earthquake struck near Istanbul, the country’s economic and population center, it was a wake up call for the country: The government changed shortly after being deemed “incompetent,” much stricter building codes and regulations were put in place, nation-wide first response organizations were founded, and a new “earthquake tax” was introduced to help fund urban renewal and recovery efforts. The recent earthquakes exposed that many of these efforts have been immensely inadequate, mostly due to large-scale corrupt political, regulatory, and construction practices throughout the 20-year AKP rule. Moreover, the country’s most prominent scientists have been incessantly alarming against a long-awaited “Istanbul Earthquake” to strike in the next decade, with consequences exponentially graver.</p>
+                </div>
+                <div class="text-container lct">
+                    <h2 class="styled-quote dbg">“The devastation we witnessed in Antakya could easily happen in Istanbul. We are sitting on a ticking time bomb.”</h2>
+                    <figcaption class="mono mgn-top-min-25">-Prof. Naci Görür, Geologist, Istanbul Technical University</figcaption>
+                </div>
+                <div class="text-container">
+                    <p class="c-pg">This study aims to dissect these corrupt practices, identify their traces in the architectural level across an urban scale, and develop an alternative risk assessment mapping method that may offer critical insight for local authorities, municipalities, as well as individuals. Recent developments in interctive mapping techniques, artificial intelligence and machine learning have allowed large urban-scale risk assessment models to be implemented in order to detect possible structural defects before any failure or collapse. In this article, we will explain the structural malpractices that led to such destruction in the area, and will propose an automated, faster, and more scalable alternative “risk assessment method” that could be used to create an earthquake risk map of the bustling metropolis of Istanbul that is home to 16 million people.</p>
+                    <p class="c-pg">In order to better understand this, we first need to zoom out and understand the country’s geological, social, and political relationship with the earthquakes — starting with the East Anatolian Fault, which is where the Feb 6 earthquakes happened. </p>
+                </div>
+            </section>
+            <section class="fs" id="FS02">
+                <div class="text-container-overlay">
+                    <div class="container-overlay-main">
+                        <h2 class="ti-tl">The East<br>Anatolian Fault</h2>
+                    </div>
+                    <div class="container-overlay-main">
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="sum">Powerful earthquakes such as the ones that occurred on Feb 6 along the EAF may induce tectonic events along the neighboring faults.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">The East Anatolian Fault is neighboring to East the North Anatolian Fault, which is considered one of the most active in the World.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">The NAF has a track record of being triggered by neighboring tectonic events, which is why the recent quakes are concerning for many.</span></div></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC04">
+                <div class="textbox-container tb4">
+                    <div class="textbox ti">
+                        <h3 class="title tertiary">A Long History of<br>Devastating Earthquakes</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                Despite its relatively modest land area, Turkey has experienced numerous M7.0+ earthquakes since antiquity. Positioned at the intersection of the Eurasian, African, and Arabian tectonic plates and crisscrossed by several major fault lines, it is one of the most seismically active regions in the world.                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s25"></div>
+
+            <section class="fs fschctr" style="z-index: 100" id="FS032">
+                <p class="fs-chpid" id="chp02">CHAPTER 02</p>
+                <h2 class="fs-title" id="fs0003Title">The North Anatolian Fault</h2>
+            </section>
+            <section class="fs fs-underlay" id="FS03">
+                <figure class="image-container xlct mgn-top-50 naf-seq">
+                    <img src="/resources/images/naf/naf-seq.svg" width="100%" alt="A soft story structure diagram">
+                </figure>
+                <div class="text-container" style="display: block;" id="The North Anatolian Fault">
+                    <p class="c-pg">The North Anatolian Fault (NAF) is a major strike-slip fault zone stretching approximately 1,500 kilometers (900 miles) across northern Turkey, from the junction with the East Anatolian Fault in eastern Turkey to the northern Aegean Sea. </p>
+                    <p class="c-pg">Since the mid-20th century, seismologists have understood that earthquakes along the NAF move in a westward progression, with each quake triggering the next. This phenomenon became evident following the 1939 Erzincan earthquake, which resulted in over 32,000 fatalities and more than 100,000 injuries.</p>
+                    <p class="c-pg">Research indicates that nine out of ten major earthquakes along the NAF between 1939 and 1992 were brought closer to failure by the preceding shocks due to the transfer of stress along the fault line. This progressive failure mechanism suggests that each large earthquake can set up the next one by altering the stress distribution along the fault.</p>
+                    <p class="c-pg">By studying the sequence of past earthquakes, seismologists can identify patterns and potential stress points, enabling them to predict future earthquakes. The most recent major earthquake along the NAF, the 1999 Izmit earthquake, which killed over 17,000 people, has led the scientific community to anticipate the next major earthquake hitting Istanbul.</p>
+                    <p class="c-pg">Due to Istanbul’s proximity to the NAF, the warning time for a major earthquake could be as short as 2-6 seconds, making a rapid response challenging. Combined with its dense population of 20 million and inconsistent infrastructure quality, the city could face an unprecedented level of destruction.</p>
+                </div>
+            </section>
+            <section class="fs" id="FS04">
+                <div class="text-container-overlay">
+                    <div class="container-overlay-main">
+                        <h2 class="ti-tl">A Century of Earthquakes</h2>
+                    </div>
+
+                    <div class="container-overlay-main">
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="sum">Over the past century, eight +M7 earthquakes occurred along the North Anatolian Fault Line. </span><span class="non-sum">Each happening further west of the one preceding it.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">The most recent of which is the 1999 Izmit-Gölcük Earthquake, which struck 50 miles outside of Istanbul, igniting widespread political, social, and economic change across Turkey.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">Experts are concerned that the February 6 earthquakes could potentially trigger a future earthquake along the North Anatolian Fault (NAF) near or beneath Istanbul.</span></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s75"></div>
+
+            <section class="storyboard" id="SEC05">
+                <div class="textbox-container tb4">
+                    <div class="textbox ti">
+                        <h3 class="title tertiary">1999 Gölcük-Izmit Earthquake:<br>A Disaster Powerful Enough to Change Governments</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                The most recent major tectonic event along the <a href="#FS03">North Anatolian Fault</a>, the 1999 Izmit-Gölcük Earthquake has served as a catalyst for the country, causing widespread changes in the government, and brough new approaches to disaster management, urban planning, construction regulations, and raised the public's awareness about seismic risks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="fs fschctr" style="z-index: 100" id="FS052">
+                <p class="fs-chpid" id="chp03">CHAPTER 03</p>
+                <h2 class="fs-title" id="fs052Title">1999 Golcuk Earthquake</h2>
+            </section>
+            <section class="fs fs-underlay" id="FS05">
+                <div class="text-container">
+                    <p class="c-pg">The most recent major tectonic event along the North Anatolian Fault, the 1999 Izmit-Gölcük Earthquake, struck on August 17 at 3:01 AM local time. With a magnitude of 7.6 and an epicenter just 90 kilometers east of Istanbul, this 37-second tremor claimed over 17,000 lives and displaced 500,000 people. As Turkey’s most destructive earthquake until February 6, it exposed critical vulnerabilities in the country’s disaster preparedness, many of which were due to rampant corruption in the construction industry. </p>
+                    <p class="c-pg">The incumbent government’s organizational failure and inability to respond and provide help to the area, combined with a long-standing financial crisis, has left the public with a bitter sentiment that “the state has left them on their own.” As a result, the government received less than 10% of the vote in the 2002 elections.</p>
+                </div>
+                <figure class="image-container-fullwidth xlct mgn-sds-auto" style="align-self:center;">
+                    <img src="/resources/images/1999/02-23-chart.svg" width="90%" alt="A comparison of before 2002, after 2002, and the current state of disaster preparedness efforts in Turkey.">
+                    <figcaption class="mono">The states of disaster preparedness in Turkey,<br>informed and taxonomized by major tectonic events.</figcaption>
+                </figure>
+                <div class="text-container">
+                    <p class="c-pg">The Justice and Development Party (AKP), which still is the ruling party in the country, rose to power in the elections with Mr. Recep Tayyip Erdogan, back then the very popular and highly-acclaimed Mayor of Istanbul, promising drastic changes. The newly appointed government codified what was initially planned to be a short-term recovery act, the infamous “Earthquake Tax,” making it permanent. It also launched the country’s first nationwide disaster response organization, AFAD, fore-fronted much stricter construction regulations and building codes, and introduced massive-scale urban renewal programs.</p>
+                    <p class="c-pg">Since 2002, the AKP has been able to consolidate its base largely due to initiatives that many believed had transformed Turkey from a run-down, old country to modern standards, with new highways, residences, and other infrastructure improvements. However, the February 6 earthquakes have led to widespread disillusionment. The devastation revealed that many of the government’s commitments were not fulfilled, exposing significant inadequacies and corruption in regulatory enforcement, infrastructural reconstruction and disaster preparedness efforts.</p>
+                    <p class="c-pg">This, along with the westward pattern of the seismic activity along the North Anatolian Fault suggesting an increased possibility of a tectonic event taking place around Istanbul, directly to the west of the most-recent quake zone Izmit, has left a city of 20 million worried about the safety of their homes and workplaces. </p>
+                </div>
+            </section>
+            <section class="fs" id="FS06">
+                <div class="text-container-overlay">
+                    <div class="container-overlay-main">
+                        <h2 class="ti-tl">The 1999<br>Izmit-Gölcük Earthquake</h2>
+                    </div>
+                    <div class="container-overlay-main">
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="sum">The M7.6 earthquake lasted 37 seconds and took lives of more than 17,000 people, and displaced 500,000 others. </span><span class="non-sum">It was the biggest that the country has ever seen until the Feb 6 earthquakes.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">The devastating event has caused significant changes, such as the Ecevit government to lose in the following elections to AKP, which still holds the office today.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">The AKP campaign promised significant changes to the country's natural disaster response strategies, including a new Earthquake Tax, and stricter construction codes.</span></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s5"></div>
+
+            <div class="spacer s1"></div>
+
+            <section class="storyboard" id="SEC06">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">The Impending Istanbul Earthquake</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                Decades of corrupt practices that led to the February 6 aftermath and warnings about an impending tectonic event, informed by historical patterns, now cause widespread concern about the safety of current buildings in a city of 20 million people.                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-1">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">Population Density</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                Home to a quarter of the country, Istanbul is operating way above its capacity as a result of failed migration policies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-2">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">State of Structural Testing</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                Only less than 15% of the buildings are tested. Many don't opt in due to potential legal implications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-3">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">Low Damage</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                The February 6 earthquakes has once again reminded the residents of 20 million city that the impending earthquake may happen anytime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-4">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">Medium Damage</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                The February 6 earthquakes has once again reminded the residents of 20 million city that the impending earthquake may happen anytime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-5">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">Heavy Damage</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                The February 6 earthquakes has once again reminded the residents of 20 million city that the impending earthquake may happen anytime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-6">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">Extremely Heavy Damage</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                The February 6 earthquakes has once again reminded the residents of 20 million city that the impending earthquake may happen anytime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="storyboard" id="SEC06-7">
+                <div class="textbox-container tb75">
+                    <div class="trp-textbox ti">
+                        <h3 class="title tertiary">Estimated Loss of Life</h3>
+                        <div class="tb">
+                            <p class="tp">
+                                Proejcted figures show that the densest neighborhoods are at the highest risk of loss of life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="spacer s35"></div>
+
+            <section class="fs fschctr" style="z-index: 100" id="FS072">
+                <p class="fs-chpid" id="chp04">CHAPTER 04</p>
+                <h2 class="fs-title" id="fs072Title">The Big Istanbul Earthquake</h2>
+            </section>
+            <section class="fs fs-underlay" id="FS07">
+                <div class="text-container">
+                    <p class="c-pg">The devastating earthquake in February of 2023 has heightened anxiety among Istanbul’s residents about the inevitable "Büyük Istanbul Depremi" (The Next Great Istanbul Earthquake). </p>
+                    <p class="c-pg">Given the Istanbul’s proximity to the North Anatolian Fault, the warning time for such an event could be as short as 2-6 seconds, making rapid emergency response extremely challenging. Combined with its dense population of 20 million and widespread structural vulnerabilities, the city is at risk of unprecedented destruction. </p>
+                </div>
+    
+                <section class="numbers-container nc-dark mgn-top-10" id="ch05-cds01">
+                    <div class="card">
+                        <h4 class="card-title-top mono">POPULATION</h4>
+                        <h4 class="fact-number">20<br>Million</h4>
+                        <p class="card-description mono">1/4 of the Country Lives in Istanbul<span class="card-description-long"></span></p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title-top mono">BUILDINGS</h4>
+                        <h4 class="fact-number">1.2<br>Million</h4>
+                        <p class="card-description mono">Only a fraction of them tested<span class="card-description-long"></span></p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title-top mono">EXPECTED TO COLLAPSE</h4>
+                        <h4 class="fact-number">+52%<br>Under Risk</h4>
+                        <p class="card-description mono">625.000 Buildings Built Before 1999<span class="card-description-long"></span></p>
+                    </div>
+                </section>
+
+                <div class="text-container">
+                    <p class="c-pg">With 3,049 people per square kilometer, Istanbul is one of the densest urban areas in the world, and the most densely packed neighborhoods also tend to be the most prone to earthquake damage. According to Mehmet Özhaseki, the Minister of Environment and Urbanization, approximately 600,000 residential units in Istanbul would likely collapse in earthquake with a magnitude above 7.0.</p>
+                
+                </div>
+
+                <script src="https://d3js.org/d3.v6.min.js"></script>
+                <script src="https://unpkg.com/topojson@3"></script>
+                <div id="plot" class="plot-container xxlct">
+                    <div class="controls-container" id="controls">
+                        <div class="controls-titlebar"><h3 class="plhdr-w" style="text-align:left">IMM Risk Simulation, Mapped</h3><br><div class="controls-titlebar minfo">Hover over a neighborhood for more</div></div>
+                        <div class="toggles" id="toggles">
+                            <button class="toggle-bt toggle-pop" onclick="switchData('population')" data-default="true">Population</button>
+                            <button class="toggle-bt toggle-dt" onclick="switchData('death_toll')">Death Toll</button>
+                            <button class="toggle-bt toggle-sh" onclick="switchData('dmg_pop')">Building Damage</button>
+                        </div>
+                    </div>
+                    <div id="popup" class="popup"></div>
+                    <div id="plot01" class="cartography-container ist-p">
+                        <svg class="cartography-container ist-p">
+                            <g class="map"></g>
+                            <g class="bounding-box"><rect></rect></g>
+                            <g class="centroid"><circle r="4"></circle></g>
+                            <g class="boundary"></g>
+                        </svg>
+                    </div>  
+                </div>
+                <div class="text-container mgn-btm-min-5">
+                    <p class="c-pg">The February 6 earthquakes laid bare the extent of corruption and lax enforcement in Istanbul’s construction industry, rendering past records unreliable. Coupled with an increasing number of scientific warnings about an imminent major earthquake near the city, these revelations have triggered a race against time to conduct structural tests on nearly every building in Istanbul—a task of unprecedented scale and speed.</p>
+                    <p class="c-pg">In response, the municipality has initiated several studies to simulate the potential damage to buildings, people, and infrastructure. The data, now publicly available on the city's Open Data portal, includes interactive maps that display damage estimates, injury and death tolls, and shelter availability by neighborhood. While informative, these simulations lack the granularity needed at the building level, which is crucial given the varying degrees of structural integrity across the city.</p>
+                    <p class="c-pg">To address this gap, the city has rolled out a Rapid Scan program, allowing residents to opt for a faster, albeit less comprehensive, structural evaluation. However, this initiative faces substantial hurdles. Soaring property prices have trapped many residents in potentially unsafe buildings, with many tenants unwilling or unable to relocate even if their homes fail the assessment. According to Mayor İmamoğlu, "Even with the fast scan program, many residents hesitate to participate simply because they cannot afford to move." Despite these challenges, the city has launched several ambitious housing projects, totaling around 300,000 new units. However, this number falls far short of meeting the skyrocketing demand for affordable housing, exacerbated by recent seismic activity and an ongoing economic crisis.</p>
+                </div>
+                <h2 class="styled-quote dbg">It may take up to 21 years to get<br>a structural test for your building.</h2>
+                <div class="text-container">
+                    <p class="c-pg">The situation is even more dire when considering the sheer backlog of structural tests. At the current pace of 120 buildings per day, it could take the average Istanbul resident up to 21 years to see if their building is safe. With the North Anatolian Fault signaling an imminent quake, grassroots initiatives led by local architects, engineers, and students have emerged as a stopgap. These groups have taken to social media, circulating makeshift checklists for residents to identify visible structural deficiencies. These grassroots efforts have gained widespread popularity, sparking public conversations and helping residents make critical safety decisions. However, these movements also highlight the need for a more agile, granular, and scalable approach to Istanbul’s urgent structural testing crisis.</p>
+                </div>
+                
+            </section>
+            <section class="fs" id="FS08">
+                <div class="text-container-overlay">
+                    <div class="container-overlay-main">
+                        <h2 class="ti-tl">The Upcoming<br>Istanbul Earthquake</h2>
+                    </div>
+                    
+                    <div class="container-overlay-main">
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="sum">Researchers predict that the likelihood of a M7.0 quake to hit Istanbul in the next 5 years is 70%. </span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">That is nearly 20 Million people, living in more than 1.2 million buildings.</span></div></div>
+                        <div class="container-overlay-sub"><div class="container-overlay-sub-p"><span class="non-sum">625.000 of them are to be heavily damaged - that's more than 52%.</span></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <article class="story">
+                <div class="text-container mgn-top-100">
+                    <p class="c-pg">
+                        Despite numerous studies pinpointing the most vulnerable structures and communities throughout Istanbul, few have yielded actionable solutions that can be easily communicated to the public. The Municipality's risk simulation study, while available as a spreadsheet on the city's Open Data portal, falls short in terms of interactivity and accessibility, making it difficult for the average resident to engage with and understand the data.                    </p>
+                </div>
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25">
+                    <img src="/resources/images/csv/CSV-01.png" width="100%" alt="Risk Simulation data, retrieved from Istanbul Open Data portal.">
+                    <figcaption class="mono mgn-btm-min-25">Risk simulation studies and datasets are open to public, although mostly in unfriendly formats.</figcaption>
+                </figure>
+                <div class="text-container">
+                    <p class="c-pg">However, some high-risk areas are well-known: The southern districts of the European side and the Princes’ Islands face the greatest danger due to their proximity to the North Marmara fault lines. Similarly, low-income neighborhoods, originally developed as “gecekondus” (makeshift buildings hastily constructed by factory workers in the 1960s), are poorly documented, with many erected before modern construction regulations were enforced. The disparity between these under-resourced areas and the well-established, affluent neighborhoods is stark, with the absence of planning and open spaces clearly visible even in satellite imagery.</p>
+                </div>
+                    <figure class="image-container-fullwidth lct mgn-sds-auto mgn-top-min-10 mgn-btm-20">
+                        <img src="/resources/images/sat-rent-graph/satellite-analysis-w.png" width="100%" alt="Satellite imagery, average rent, and green space analysis chart">
+                    </figure>
+                    <div id="g-rent-green-comp-box" class="g-rent-green-comp-box">
+                        <div id="g-rent-green-comp-Artboard_1" class="g-artboard" data-aspect-ratio="2.044" data-min-width="0">
+                            <img id="g-rent-green-comp-Artboard_1-img" class="g-rent-green-comp-Artboard_1-img g-aiImg" alt="" src="/resources/images/rent-green-comp.jpg"/>
+                            <div id="g-ai0-1" class="g-Layer_1 g-aiAbs" style="top:41.9478%;left:21.4946%;margin-left:-12.7664%;width:31.5329%;">
+                                <p class="g-pstyle0">$1,587</p>
+                            </div>
+                            <div id="g-ai0-2" class="g-Layer_1 g-aiAbs" style="top:41.9478%;left:72.4693%;margin-left:-12.7664%;width:31.5329%;">
+                                <p class="g-pstyle0">$442</p>
+                            </div>
+                            <div id="g-ai0-3" class="g-Layer_1 g-aiAbs" style="top:55.5114%;left:21.4946%;margin-left:-12.7664%;width:31.5329%;">
+                                <p class="g-pstyle1">Levent Mahallesi</p>
+                            </div>
+                            <div id="g-ai0-4" class="g-Layer_1 g-aiAbs" style="top:55.5114%;left:72.5413%;margin-left:-12.7664%;width:31.5329%;">
+                                <p class="g-pstyle1">Çeliktepe Mahallesi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption class="mono">Satellite images retrieved by using Google Maps API.<br/>Real estate data is retrieved from Zingat.com</figcaption>
+                <div class="text-container">
+                    <p class="c-pg">Many well-planned high-income neighborhoods and the adjacent “gecekondu” areas often lie side by side, separated only by highways, hills, or the high-rise buildings of urban renewal programs. Most of these renewal projects have focused on middle- to high-income neighborhoods, where profit margins are higher, frequently neglecting the low-income areas where residents are more vulnerable and at greater risk.</p>
+                </div>
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25">
+                    <img src="/resources/images/atakoy-sirinevler.png" style="margin-left:-17%" width="100%" alt="Before">
+                    <figcaption class="mono mgn-btm-min-25">Atakoy Sirinevler</figcaption>
+                </figure>
+                <div class="text-container">
+                    <p class="c-pg">This is why we selected Hurriyet and Şirinevler neighborhoods as the pilot site for our project. Separated by only a highway strip from one of the city’s most meticulously planned developments, Ataköy, this area consistently ranks high in risk assessments and simulation studies. Many of its buildings were constructed before modern regulations took effect, sharing a common set of structural flaws and malpractices known to contribute to failures during earthquakes. </p>
+                </div>
+            </article>
+
+            //Anatomy of A Collapse
+            <section class="fs fschctr" style="z-index: 100" id="FS0911">
+                <p class="fs-chpid" id="chp05">CHAPTER 05</p>
+                <h2 class="fs-title" id="fs00911Title">Anatomy of A Collapse</h2>
+            </section>
+            <section class="fs fs-underlay" id="FS0912">
+                <div class="fs-tc text-container">
+                    <p class="c-pg" style="margin-top: 50px;">The 1999 Earthquake was different in the way that it was widely studied and well documented. A detailed <a href="https://www.caee.ca/files/lesson-learned/kocaeli1.pdf">field investigation</a> conducted by <a href="https://www.istructe.org/get-involved/supported-organisations/eefit/">the Earthquake Engineering Field Investigation Team (EEFIT)</a> offers particularly useful insights here, highlighting that many structures collapse in a similar way, commonly referred as “pancake collapse”, that occurs in buildings with poor structural configurations, specifically those with soft stories. Nearly 24 years after regulatory amendments were introduced to eliminate these outdated construction practices, numerous photos and videos from the February 6 Earthquakes reveal that even newly constructed buildings collapsed due to the same malpractices these regulations were meant to address.</p>
+                    <p class="c-pg">Below is a frame-by-frame excerpt from a social media post depicting a building in Şanlıurfa collapsing due to soft-floor failure to better illustrate this concept.</p>
+                </div>
+                <div class="pancake container" id="pancake-carousel">
+                    <div class="pancake pck-card">
+                        <img src="/resources/images/pancake-collapse/pancake-collapse-carousel-01.png" alt=""/>
+                        <div class="pancake pck-title-bar">
+                            <h2 class="title pancake pck-title-first">A</h2>
+                            <h2 class="title pancake pck-title-second">GROUND FLOOR STARTS SHAKING</h2>
+                        </div>
+                    </div>
+                    <div class="pancake pck-card">
+                        <img src="/resources/images/pancake-collapse/pancake-collapse-carousel-02.png" alt=""/>
+                        <div class="pancake pck-title-bar">
+                            <h2 class="title pancake pck-title-first">B</h2>
+                            <h2 class="title pancake pck-title-second">STRUCTURAL SYSTEM STARTS TO FAIL</h2>
+                        </div>
+                    </div>
+                    <div class="pancake pck-card">
+                        <img src="/resources/images/pancake-collapse/pancake-collapse-carousel-03.png" alt=""/>
+                        <div class="pancake pck-title-bar">
+                            <h2 class="title pancake pck-title-first">C</h2>
+                            <h2 class="title pancake pck-title-second">THE GROUND FLOOR COLLAPSES COMPLETELY</h2>
+                        </div>
+                    </div>
+                    <div class="pancake pck-card">
+                        <img src="/resources/images/pancake-collapse/pancake-collapse-carousel-04.png" alt=""/>
+                        <div class="pancake pck-title-bar">
+                            <h2 class="title pancake pck-title-first">D</h2>
+                            <h2 class="title pancake pck-title-second">THE ABOVE FLOORS COLLAPSE SEQUENTIALLY</h2>
+                        </div>
+                    </div>
+                    <div class="pancake pck-card">
+                        <img src="/resources/images/pancake-collapse/pancake-collapse-carousel-05.png" alt=""/>
+                        <div class="pancake pck-title-bar">
+                            <h2 class="title pancake pck-title-first">E</h2>
+                            <h2 class="title pancake pck-title-second">THE STRUCTURE FAILS COMPLETELY</h2>
+                        </div>
+                    </div>
+                </div>
+                <figcaption class="mono mgn-top-min-100">MOMENTS OF A PANCAKE COLLAPSE CAPTURED DURING FEBRUARY EARTHQUAKES IN SANLIURFA, TURKEY.<br>VIDEO BY VOX MEDIA. <a href="https://vimeo.com/823901043">SOURCE</a></figcaption>
+                <div class="fs-tc text-container">
+                    <p class="c-pg">This type of building, ubiquitous across the nation, is a mid-rise residential structure with street-level retail and auxiliary spaces. The upper floors extend beyond the building's footprint to increase residential square footage—a maneuver that takes advantage of a tax loophole, allowing developers to maximize profits.</p>
+                    <p class="c-pg">In the first few seconds of the quake, the building seems stable, with only subtle indicators of stress, such as the increasingly intense shaking of the glass storefronts. However, it isn’t long before the ground floor begins to buckle under the weight of the upper floors. The collapse initiates at this level, causing the ground floor to crumble and lose its structural integrity—this is when the soft-floor failure becomes apparent.</p>
+                    <p class="c-pg">As the ground floor gives way, the unsupported upper floors begin to collapse in a domino effect, with each floor pancaking onto the one below. Within seconds, the entire structure is reduced to a pile of debris and dust.</p>
+                </div>
+            </section>
+
+            //Common reasons behind structural failures
+            <article class="story">
+                <div class="text-container" style="display: block;">
+                    <h2 class="title">Common Reasons Behind<br>Structural Failures in the Region</h2>
+                    <hr class="title-line"/>
+                    <br>
+                    <h3 class="title">1. Soft Story Buildings</h3>
+                    <figure class="image-container-start" style="float:left; width: auto; margin-top:-20px; margin-bottom: -10px; margin-left: 5px; margin-right: 15px;">
+                        <img src="/resources/images/structural-diagrams/structural-diagram-02-soft-story.svg" style="float:left;" height="250px" alt="A soft story structure diagram">
+                    </figure>
+                    <p>Soft story buildings are multiple story buildings that has a ground floor that has large windows, wide openings, and large open commercial shopfronts where a shear wall or vertical support element would typically be needed to ensure that the structural stability. Especially in earthquake-prone areas such as Turkey, at least 30% of the ground floor area must be dedicated to structural elements to ensure that the structural system could withstand the stress of the above floors. Soft story buildings are highly common in the region, with many multi-story apartment buildings accommodate commercial floor space on the ground floor, which is allowed by mixed-used zoning practices. The 1999 quake has led to an updated building code that prohibited such structures, many developers did not feel pressed to follow the regulations due to the lack of a strictly enforced control mechanism.</p>
+                    <br>
+                    <h3 class="title">2. Heavy Overhangs</h3>
+                    <figure class="image-container-start" style="float:right; width: auto; margin-top:-90px; margin-bottom: -10px;">
+                        <img src="/resources/images/structural-diagrams/structural-diagram-03-heavy-overhang.svg" height="250px" alt="A building with heavy overhangs/protruding parts">
+                    </figure>
+                    <p>Another common practice is excessive cantilevering above the ground floor, as this allows developers to go beyond the site land usage limitations to maximize profits over extra square footage. Although cantilevering structures are a common practice in architectural design, combined with other malpractices such as soft story building designs, or using lower-quality building materials significantly increases the structural stress on the ground-level structural system. This may lead to a structural failure in the moment of an earthquake, even when the building may be able to withstand this load under normal conditions.</p>
+                    <br>
+                    <h3 class="title">3. Pounding Effect</h3>
+                    <figure class="image-container-start" style="float:left; width: auto; margin-top:-20px; margin-bottom: -10px; margin-left: 5px; margin-right: 15px;">
+                        <img src="/resources/images/structural-diagrams/structural-diagram-04-misaligned-floor-slabs.svg" height="250px" alt="A building with heavy overhangs/protruding parts">
+                    </figure>
+                    <p class="c-pg">Pounding effect is a common cause of collisions between adjacent structures during seismic events due to insufficient gaps between buildings that share one or more walls. In fact, pounding effect accounted for over 40 percent of all structural failures, with at least 15 percent collapsing mainly due to this phenomenon. Similarly, 200 out of 500 surveyed structures after the 1989 Loma Prieta earthquake were damaged due to the pounding forces of adjacent buildings.</p>
+                    <p class="c-pg">Although Turkish construction codes have clear guidelines for proper seismic gaps, this remains a widespread issue in many metropolitan areas worldwide due to financial and architectural constraints. In metropolitan cities, the gap is often narrow or nonexistent. For instance, statistics from Eskisehir, Turkey, show that only 36 percent of adjacent buildings are adequately separated.</p>
+                    <p class="c-pg">In addition to seismic gaps, studies show that the distance between floor levels, floor slab misalignments, and mass differences between adjacent buildings contribute to the extent of damage.</p>
+                    <h3 class="title">4. Short Columns, Misaligned Sturctural Elements and Other Post-Construction Alterations</h3>
+                    <figure class="image-container-start" style="float:right; width: auto; margin-top:-60px; margin-bottom: -10px;">
+                        <img src="/resources/images/structural-diagrams/structural-diagram-05-cut-column.svg" height="250px" alt="A building with heavy overhangs/protruding parts">
+                    </figure>
+                    <p>Structural alterations such as removing vertical supporting elements on the ground floor to open up space for commercial activities is another common practice many building owners employ to maximize profitability. Although there are multiple laws and regulations strictly prohibiting this, many buildings that has such alterations go unnoticed as it’s mostly done in the inside of the buildings.</p>
+                    <br>
+                    <h3 class="title">5. Usage of Prohibited Materials and Techniques</h3>
+                    <figure class="image-container-start" style="float:left; width: auto; margin-top:-30px">
+                        <img src="/resources/images/structural-diagrams/structural-diagram-06-sea-salt-cement.svg" height="250px" alt="Sea sand mixed cement">
+                    </figure>
+
+                    <p>The 1999 Earthquake has shown that the usage of certain construction materials, such as “sea-sand mixed cement” or rebars with no ribs, can be a significant risk factor during a earthquake. Although most of these materials cannot be identified without a structural test, some easy-to-spot visual hints can offer useful information. Many locals are advised to look for sea shells on the surface of the concrete to identify whether the cement is mixed with sea-sand.</p>
+                    <div class="callout">
+                        <p class="callout">"I come from the kitchen" in this business, as we say, meaning all my family, under my father, were also a part of this sector, the construction sector. I grew up working with him, witnessing all of the development at that time.
+                            <br><br>
+                            ...
+                            <br><br>
+                            70 percent of all the settlements in Istanbul, I would say, are vulnerable to a major earthquake. Without the proper diagnosis treating a patient is not possible. The construction materials used for various settlements in different parts of Istanbul used to be of poor quality - I personally know this myself, as I was one of those who extracted, sold, and used this type of cement.</p>
+                        <br>
+                        <br>
+                        <p class="callout" style="text-align:right">-Ali Agaoglu, Turkish Real Estate Mogul</p>
+                    </div>
+                </div>
+            </article>
+
+            //AI + Computer Vision
+            <section class="fs fschctr" style="z-index: 100" id="FS092">
+                <p class="fs-chpid" id="chp06">CHAPTER 06</p>
+                <h2 class="fs-title" id="fs0092Title">AI + Computer Vision</h2>
+            </section>
+            <section class="fs" id="FS09">
+                <div class="fs-tc text-container">
+                    <p class="c-pg">The original idea for FaultLines came from a deceptively simple hypothesis: if architects and civil engineers could recognize common structural defects just from looking at a building, could we teach a computer to do the same based off images of buildings?</p>
+                </div>
+                <figure class="image-container-fullwidth xxlct mgn-sds-auto mgn-top-min-10">
+                    <img src="/resources/images/algorithm-diagram/0724_Algorithm_Draft.png" width="100%" alt="Before">
+                </figure>
+                <figcaption class="mono mgn-btm-min-10">An early study of the FaultLines algorithm, May 2023.</figcaption>
+                <div class="text-container" id="graphiclist01">
+                    <p class="c-pg">Stress testing using a physical sample has long been considered the gold standard for assessing a building’s structural integrity. However, many citizens are discouraged from pursuing this option due to years-long wait times, potential legal implications, and municipal or bureaucratic backlogs.</p>
+                    <p class="c-pg">Traditional risk assessment studies, on the other hand, primarily rely on human-generated datasets, which are highly accurate but time-consuming and resource-intensive to produce. These studies often take place within rather static GIS environments. Moreover, the findings are rarely presented in an accessible, easy-to-understand format that can effectively inform the broader public.</p>
+                </div>
+                <div class="list-container xlct" id="category-list">
+                    <div class="list-item">
+                        <div class="pck-title-bar">
+                            <h2 class="title list-title-first">CADASTRAL</h2>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="pck-title-bar">
+                            <h2 class="title list-title-first">GEOLOGICAL</h2>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="pck-title-bar">
+                            <h2 class="title list-title-first">LEGAL</h2>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="pck-title-bar">
+                            <h2 class="title list-title-first">IMAGERY</h2>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="pck-title-bar">
+                            <h2 class="title list-title-first">HISTORICAL</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p class="c-pg">Visual indicators that architects or engineers use to make informed assessments can now be identified by multi-modal image processing algorithms. With the ever-growing amount of data available about our cities—such as live bus schedules, real-time traffic maps, or panoramic images of virtually every street—these tools are becoming increasingly powerful. The data we all utilize today, through platforms like Google Street View or IMM's own Panorama 360 City Street Viewer, combined with recent advancements in AI and computer vision algorithms, allows us to analyze the built environment in new ways, at exponentially larger scales, with greater speed, and using far fewer resources.</p>
+                </div>
+                <div id="structural-deficiencies-container">
+                    <div class="list-container">
+                        <div class="list-item-isolated">
+                            <h2 class="title list-title-first" id="svi-title">STREET LEVEL IMAGERY</h2>
+                        </div>
+                    </div>
+                    <figure class="image-container-fullwidth xxlct mgn-sds-auto mgn-top-min-10">
+                        <img src="/resources/images/svi/SVI-Image-Gallery-W.png" width="100%" alt="StreetView images that our workflow intelligently collects and pre-processes for semantic image segmentation.">
+                    </figure>
+                </div>
+                <div class="text-container">
+                    <p class="c-pg">To test our hypothesis, we first needed to identify points where two buildings were either close together or explicitly touching at one or more surfaces. To automate this process, we developed a custom Python script in QGIS that enabled us to query street imagery showing only the buildings that are sharing a wall. Once obtained, we rectified these images to correct any image segmentation or calculation issues that might have arisen due to varying perspectives.</p>
+
+                    <div class="list-container no-col xlct" id="fl-misalignment-sum">
+                        <div class="list-img">
+                            <img class="list-img-item list-img-icon-sm" style="opacity: 30%;" src="/resources/images/structural-diagrams/structural-diagram-01-structure.svg"/>
+                        </div>
+                        <div class="list-img">
+                            <img class="list-img-item list-img-icon-sm" style="opacity: 30%;" src="/resources/images/structural-diagrams/structural-diagram-02-soft-story.svg"/>
+                        </div> 
+                        <div class="list-img">
+                            <img class="list-img-icon-md" src="/resources/images/structural-diagrams/structural-diagram-04-misaligned-floor-slabs.svg"/>
+                        </div>                          
+                        <div class="list-img">
+                            <img class="icon-wide list-img-icon-sm" style="opacity: 30%; margin:0 -2    Result a0px 0 0" src="/resources/images/structural-diagrams/structural-diagram-03-heavy-overhang.svg"/>
+                        </div>                    
+                        <div class="list-img">
+                            <img class="icon-med list-img-icon-sm" style="opacity: 30%; " src="/resources/images/structural-diagrams/structural-diagram-06-sea-salt-cement.svg"/>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25">
+                    <img src="/resources/images/svi/L-R-segmentation.png" width="95%" alt="Windows from both sides of the adjacency line are (mostly) segmented for processing.">
+                </figure>
+                <figcaption class="mono">Windows of each building of both sides of the adjacency line are segmented for processing.</figcaption>
+            
+                <div class="text-container">
+                <p class="c-pg">These rectified street images then needed to be intelligently segmented to distinguish between the left and right buildings, as well as the windows within each facade. To address this, we developed a custom Geospatial AI workflow that leverages the Grounding DINO and Segment Anything models, both of which are publicly available on HuggingFace and Meta AI. By combining these two models, we can semantically process various objects—such as buildings, sidewalks, cars, windows, doors, and walls—across Istanbul’s street imagery. For this study, we further refined this workflow to detect and calculate misalignments in adjacent buildings, which is one of the five key visual cues that may indicate critical structural deficiencies.</p>        </p>
+                </div>
+
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25 mgn-btm-min-10">
+                    <img src="/resources/images/svi/svi-calculation.png" width="95%" alt="Windows from both sides of the adjacency line are (mostly) segmented for processing.">
+                </figure>
+                <figcaption class="mono mgn-btm-min-10">Facade segmentation enable us to make calculations - such as measuring the distance between windows,<br> which allowed us then to measure difference between floor levels.</figcaption>
+
+                <div class="text-container">
+                    <p class="c-pg">Semantic image segmentation enabled us to generate grouped masks for each window on both facades, using red and blue color maps for easier identification. We then created subgroups for vertical and horizontal arrays of windows, allowing us to index facade elements. This approach enabled us to perform calculations based on specific groups of windows by floors or bays. By measuring distances from either side of the adjacency line and comparing them with the opposite side, we were able to generate an adjacency score—an integer value representing the length difference between corresponding floor slabs of the left and right buildings.</p>
+                </div>
+
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25 mgn-btm-min-10">
+                    <img src="/resources/images/svi/svi-naming-convention.png" width="95%" alt="Indexin and naming convention.">
+                </figure>
+                <figcaption class="mono mgn-btm-min-10">INDEXING AND NAMING CONVENTION THAT ALLOWED FOR<br> TRANSFERRING, TRACKING AND MATCHING ATTRIBUTES BETWEEN GIS AND ML ENVIRONMENTS.</figcaption>
+
+                <div class="text-container">
+                    <p class="c-pg">The processed images were then saved with a naming convention that included latitude, longitude, index numbers for buildings on both sides of the adjacency line, and the adjacency score. This method facilitated the seamless transfer of information between GIS and image segmentation environments, allowing us to match these numbers with their geospatial counterparts in QGIS, where we could visualize and analyze the results, as shown below.</p>
+                </div>
+
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25 mgn-btm-min-10">
+                    <img src="/resources/images/svi/fl-gis-environment.png" width="95%" alt="Merging adjacency calculations back in QGIS for visualization.">
+                </figure>
+                <figcaption class="mono mgn-btm-min-10">MERGING ADJACENCY CALCULATIONS BACK WITH CORRESPONDING BUILDING IN QGIS FOR VISUALIZATION</figcaption>
+
+                <div class="text-container">
+                    <p class="c-pg">In summary, our workflow encompassed four main steps:</p>
+                    <p class="c-pg mgn-btm-50">
+                        1. Finding street-facing points at which two buildings share one or more surfaces.<br/>
+                        Query a street-level image of this adjacency line for further processing.<br/>
+                        2. Semantically segmenting the image to find out floor slabs and distances based on street facing elevations.<br/>
+                        3. Calculating the distance between floor slabs of buildings from both left and right side of the adjacency line. <br/>
+                        4. Assigning this calculated score back onto the GIS object.
+                    </p>
+
+                    <h2 class="ti-tl-sec" id="#evaluation">Evaluation</h2>
+                    <hr class="inline-ti-tl"/>
+                    <p class="c-pg">We evaluated the accuracy of zero-shot prompt-based image segmentation for estimating floor misalignment-related pounding effects in adjacent buildings. This evaluation was based on a series of metrics applied during score generation and was conducted on a randomly selected test group of buildings within our pilot ZIP code, 34188. To achieve this, we compared machine-generated image segmentation results and floor misalignment scores with human-evaluated results across the same images using three distinct methods:</p>
+                    <p class="c-pg">
+                        1.	Annotators rated floor misalignment levels from A (perfectly aligned) to F (completely misaligned).<br/>
+                        2.	Annotators compared AI-generated results with corresponding human evaluations.<br/>
+                        3.	If an issue was found in the post-processed image or score, annotators specified the error based on a comprehensive list of points of failure, ranging from object obstruction to facade misindexing.
+                    </p>
+                </div>
+
+                <section class="numbers-container nc-dark mgn-top-50 mgn-btm-50">
+                    <div class="card">
+                        <h4 class="card-title-top mono">POST-PROCESSING<br/>SUCCESS RATE</h4>
+                        <h4 class="rate-number">65.38%</h4>
+                        <p class="card-description mono fs-smaller">SEGMENTATION AND POST-PROCESSING (E.G. FACADE INDEXING)<span class="card-description-long"></span></p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title-top mono">AI ESTIMATION<br/>SUCCESS RATE</h4>
+                        <h4 class="rate-number">84.61%</h4>
+                        <p class="card-description mono fs-smaller">EXCLUDING MISINDEXING & POST-SEGMENTATION PROCESSING FAILURES<span class="card-description-long"></span></p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title-top mono">POTENTIAL<br/>SUCCESS RATE</h4>
+                        <h4 class="rate-number">97.11%</h4>
+                        <p class="card-description mono fs-smaller">IN THE CASE OF SEGMENTATION SUCCESS RATE BEING 100%<span class="card-description-long"></span></p>
+                    </div>
+                </section>
+
+                <div class="text-container">
+                    <p class="c-pg">Our results showed an 84.61% success rate in the semantic segmentation of facade elements. The remaining samples could not be successfully segmented due to extreme facade irregularities, vehicle and object obstructions, misaligned perspectives, angles, or headings prior to capturing street imagery, and low raster quality after image processing.</p>
+                    <p class="c-pg">Despite these challenges, the results underscore the potential of zero-shot models for practical applications in raster and geospatial use cases, such as our experiment. Future improvements could leverage the newly released SAM 2.0 model by Meta AI, which offers significantly higher accuracy rates. Additionally, incorporating more accurate geospatial datasets and up-to-date raster imagery could further enhance segmentation precision.</p>
+                </div>
+
+                <figure class="image-container-fullwidth xlct mgn-sds-auto mgn-top-min-25 mgn-btm-min-10">
+                    <img src="/resources/images/svi/svi-fl-gis-final.png" width="95%" alt="Merging adjacency calculations back in QGIS for visualization.">
+                </figure>
+
+                <figure class="image-container-fullwidth mgn-top-20 mgn-btm-40">
+                <img src="/resources/images/arrow-02.svg" width="30px" alt="Merging adjacency calculations back in QGIS for visualization.">
+                </figure>
+
+                <div id="structural-deficiencies-container">
+                    <div class="list-container">
+                        <div class="list-item-isolated">
+                            <h2 class="title list-title-first">INTERACTIVE MAP</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-container">
+                    <p class="c-pg">By intelligently detecting adjacent buildings and accurately calculating critical measurements across neighboring structural frames within a GIS environment, we were able to share these findings on an interactive map interface. The information was not only represented through static geometries but was also enriched with calculation results, explanations, and machine-generated process images. This approach ensured that our workflow accurately reflected real-world scenarios and allowed viewers to critically assess the results for transparency.</p>
+                </div>
+            </section>
+
+            <section class="fs fschctr" style="z-index: 100;" id="FS00112">
+                <p class="fs-chpid" id="chp07">CHAPTER 07</p>
+                <h2 class="fs-title" id="fs00112Title">Interactive Map</h2>
+            </section>
+            <section class="fs fs-underlay" id="FS11">
+                <div class="text-container">
+                    <p class="c-pg">The fundamental aim of this project has always been to create an interactive platform where people can access critical information about their buildings in a clear, engaging, and easy-to-use way.</p>
+                    <p class="c-pg">By leveraging recent advancements in computer vision, AI, and computing power, we've trained computers to examine the built environment much like an architect or engineer would, parsing visual information into meaningful insights. The resulting datasets are then funneled into an immersive interactive map where anyone can look up their address and access machine-generated structural insights. </p>
+                    <p class="c-pg">When dealing with AI-generated data, transparency is essential, especially because much of this data comes from "blackbox" processes that aren't always easy to control or interpret. To address this, we made sure that every step of our computations on the initial images was clear, explainable, and easy to share. We were upfront about our objectives with each calculation and used straightforward language to encourage users to critically evaluate the AI-generated results. This approach ensures that these "risk insights" are seen as part of an ongoing process rather than definitive answers, while also equipping people with the knowledge to identify important structural indicators in their surroundings.</p>
+                    <br/>
+                    <h2 class="ti-tl-sec" id="#futurediscussion">Ethical Concerns & <br/>Future Research Discussions</h2>
+                    <hr class="inline-ti-tl"/>
+                    <p class="c-pg">While this study maintains an optimistic perspective on AI-driven initiatives for the public good, there remains numerous complex challenges to be addressed moving forward. Below are some highlights from this year-long discussion:</p>
+                    <p class="c-pg">1. How can we develop better validation methods for AI assessments beyond current practices? What testing procedures ensure AI models are validated against benchmarks or ground truth data? How will structural engineers review AI-generated assessments, and how will their expertise refine the models?                    </p>
+                    <p class="c-pg">2. Structural issues often stem from internal defects not visible externally. How does the project address undetectable flaws? How can we combine AI-generated surface-level data with existing datasets like municipal inventories, geological surveys, and seismic history to gain deeper insights into the built environment?</p>
+                    <p class="c-pg">3. How can we clearly differentiate AI-generated assessments as insights rather than factual data? Could this distinction help develop solutions that protect the most vulnerable, instead of being used as grounds for forced evacuations or other punitive measures?</p>
+                    <p class="c-pg">4. How can we communicate the limitations of AI assessments to build trust in the data without causing undue fear or stress? How can the project share information that encourages proactive safety measures?                    </p>
+                    <p class="c-pg">5. Obligation to inform vs. risk of harm: Is there a moral imperative to inform residents about the structural safety of their buildings, even if the information may cause panic or distress among those unable to relocate or retrofit?</p>
+                    <p class="c-pg">6. How should access to this data be managed to balance open availability with privacy concerns? How can the project ensure that any citizen who wishes to access the information can do so, while respecting the privacy and rights of those who choose not to participate?                    </p>
+                    <p class="c-pg">7. To what extent are the AI algorithms and decision-making processes transparent to stakeholders? How does this transparency build trust in the assessments?</p>
+                    <p class="c-pg">8. How can educational resources alongside risk assessments help residents make informed decisions? How can the project involve community members to ensure actions align with their needs and capabilities?</p>
+                    <p class="c-pg">9. Who is responsible if an inaccurate AI assessment leads to harm or consequences for property owners?                     </p>
+                    <p class="c-pg">10. What protocols should be established to prevent the misuse of AI-generated data by public or private organizations, such as governments or insurance companies, ensuring that vulnerable populations are not disproportionately targeted or disadvantaged?</p>
+                    <br/>
+                    <h2 class="ti-tl-sec" id="#usingthemap">Using the Map</h2>
+                    <hr class="inline-ti-tl"/>
+                    <p class="c-pg">Below is the first publicly accessible interactive map, the culmination of a year-long research effort at the Center for Spatial Research. As of now, you can explore risk insights related to "misaligned floor calculations" in Hürriyet Mahallesi, a pilot neighborhood densely populated with buildings constructed before the 1999 Earthquake, where open spaces and greenery are scarce. This area is particularly noteworthy in the IMM Earthquake Risk Simulation dataset due to its high projected levels of damage and casualty rates.</p>
+                    <p class="c-pg">Use the search bar to find building names, door numbers, addresses, and more (currently limited to available ZIP codes), or simply hover over a building to view a detailed risk report and a visual summary of the tests conducted. The interactive map will gradually expand to cover all boroughs and ZIP codes across Istanbul, with more tests and data contributing to the overall risk score for each building.</p>
+
+                </div>
+            </section>
+            <section class="fs fs-tab fschctr" style="z-index: 101;" id="FS12">
+                <div class="text-container-overlay">
+                    <div class="container-overlay-main">
+                        <div class="interactive-map-title">
+                            <span class="ti-tl" id="tab-title" style="font-size: medium;">FaultLines</span>
+                            <span class="ti-tl ver" id="ver0_1" style="display: none; font-size: medium;">PRE</span>
+                        </div>
+                        <div class="container-overlay-sub-p">
+                            <div class="interactive-map-search-container">
+                                <input type="search" class="interactive-map-search-input" id="interactive-map-search-input" style="background-color: #000 !important;" placeholder="Search for an index #">
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="container-overlay-main">
+                        <div class="container-overlay-sub">
+                            <div class="container-overlay-sub-p">
+                                <h2 class="ti-tl" id="tab-info" style="font-size: medium;"><span id="index-no-placeholder">Index Number: </span><span id="index-no"></span></h2>
+                            </div>
+                        </div>
+                        <div class="container-overlay-sub">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="flMap"></div>
+        </main>
+
+        <script src="map.js"></script>
+        <script src="plot.js"></script>
+        <script src="script.js"></script>
+        <script>
+            function initializeMap() {
+               if (document.getElementById('plot01')) {
+                   var defaultButton = document.querySelector('.toggle-bt[data-default="true"]');
+                   if (defaultButton) {
+                       setTimeout(function() {
+                           defaultButton.click();
+                       }, 1000);
+                   } else {
+                   }
+               } else {
+                   setTimeout(initializeMap, 1000);
+               }
+            }
+           
+            window.onload = initializeMap;
+           </script>
+        <script src="caption.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+
+        <div class="back-arrow" id="backArrow" onclick="moveTop()"></div>
+        <footer id="footer">
+
+            <div class="footer-section" id="footer-section">
+                <h3>Sections</h3>
+                <ul>
+                    <li><a href="#introduction" title="Introduction" aria-label="Introduction">Introduction</a></li>
+                    <li><a href="#chp01" title="February 6" aria-label="February 6">February 6</a></li>
+                    <li><a href="#FS02" title="East Anatolian Fault" aria-label="East Anatolian Fault">East Anatolian Fault</a></li>
+                    <li><a href="#chp02" title="North Anatolian Fault" aria-label="North Anatolian Fault">North Anatolian Fault</a></li>
+                    <li><a href="#chp03" title="1999 Earthquake" aria-label="1999 Earthquake">1999 Earthquake</a></li>
+                    <li><a href="#chp04" title="Istanbul Earthquake" aria-label="Istanbul Earthquake">Istanbul Earthquake</a></li>
+                    <li><a href="#chp05" title="Anatomy of A Collapse" aria-label="Anatomy of A Collapse">Anatomy of A Collapse</a></li>
+                    <li><a href="#chp06" title="AI + Computer Vision" aria-label="AI + Computer Vision">AI + Computer Vision</a></li>
+                    <li><a href="#evaluation" title="Evaluation" aria-label="Evaluation">Evaluation</a></li>
+                    <li><a href="#chp07" title="Interactive Map" aria-label="Interactive Map">Interactive Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" id="footer-section">
+                <h3>Maps</h3>
+                <ul>
+                    <li><a href="#chp01" title="Feb 6 Earthquakes" aria-label="Feb 6 Earthquakes">Feb 6 Earthquakes</a></li>
+                    <li><a href="#chp02" title="Past NAF Earthquakes" aria-label="Past NAF Earthquakes">Past NAF Earthquakes</a></li>
+                    <li><a href="#chp03" title="1999 Izmit-Gölcük Earthquake" aria-label="1999 Izmit-Gölcük Earthquake">1999 Izmit-Gölcük Earthquake</a></li>
+                    <li><a href="#chp04" title="The Impending Istanbul Earthquake" aria-label="The Impending Istanbul Earthquake">The Impending Istanbul Earthquake</a></li>
+                </ul>
+        
+                <h3>Technologies</h3>
+                <ul>
+                    <li><a href="https://docs.mapbox.com/mapbox-gl-js/guides" title="Mapbox GL JS Documentation" aria-label="Mapbox GL JS Documentation">Mapbox GL JS</a></li>
+                    <li><a href="https://huggingface.co/docs/transformers/en/model_doc/grounding-dino" title="GroundingDINO Documentation" aria-label="GroundingDINO Documentation">GroundingDINO</a></li>
+                    <li><a href="https://segment-anything.com" title="Segment Anything by Meta AI Research" aria-label="Segment Anything by Meta AI Research">Segment Anything</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Research</h3>
+                <ul>
+                    <li><a href="#" title="Mentions" aria-label="Mentions">Mentions</a></li>
+                    <li><a href="#" title="Contributors" aria-label="Contributors">Contributors</a></li>
+                    <li><a href="#" title="Technologies" aria-label="Technologies">Technologies</a></li>
+                    <li><a href="#" title="Organizations" aria-label="Organizations">Organizations</a></li>
+                    <li><a href="#" title="Bibliography" aria-label="Bibliography">Bibliography</a></li>
+                </ul>
+                <h3>Development</h3>
+                <ul>
+                    <li><a href="#" title="Github" aria-label="Github">GitHub</a></li>
+                    <li><a href="#" title="Developer Blog" aria-label="Developer Blog">Developer Blog</a></li>
+                    <li><a href="#" title="Open Source Libraries" aria-label="Open Source Libraries">Open Source Libraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Datasets</h3>
+                <ul>
+                    <li><a href="#" title="USGS" aria-label="United States Geological Survey Datasets">USGS</a></li>
+                    <li><a href="#" title="OpenStreetMaps" aria-label="OpenStreetMaps">OpenStreetMaps</a></li>
+                    <li><a href="#" title="Istanbul Open Data" aria-label="Istanbul Open Data Datasets by Istanbul Metropolitan Municipality">Istanbul Open Data</a></li>
+                    <li><a href="#" title="Bogazici University" aria-label="Bogazici University Kandilli Observatory Seismic Records">Bogazici University</a></li>
+                    <li><a href="#" title="Global Earthquake Model" aria-label="Global Earthquake Model Datasets">Global Earthquake Model</a></li>
+                    <li><a href="#" title="Columbia University CSR" aria-label="Columbia University Center for Spatial Research GIS Datasets">Columbia CSR</a></li>
+                    <li><a href="#" title="Istanbul Technical University" aria-label="Istanbul Technical University Datasets">Istanbul Technical University</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>FaultLines Project</h3>
+                <ul>
+                    <li><a href="https://faultlines.ai" title="Home" aria-label="Homepage">FaultLines.ai</a></li>
+                    <li><a href="#chp07" title="Interactive Map" aria-label="Interactive Map">Interactive Map</a></li>
+                    <li><a href="https://www.arch.columbia.edu/venture-challenge" title="Venture Challenge" aria-label="Venture Challenge">Venture Challenge</a></li>
+                    <li><a href="https://brown.columbia.edu/the-winners-of-our-venture-challenge/" title="FaultLines on Brown Institute" aria-label="FaultLines on News">FaultLines on Brown Institute</a></li>
+                </ul>
+                <h3>Taha Erdem Öztürk</h3>
+                <ul>
+                    <li><a href="https://tahaerdemozturk.com/about" target="_blank" title="About Taha Erdem Öztürk" aria-label="About Taha Erdem Öztürk">About</a></li>
+                    <li><a href="https://tahaerdemozturk.com" target="_blank" title="Taha Erdem Öztürk - Website" aria-label="Taha Erdem Öztürk - Website">Website</a></li>
+                    <li><a href="https://tahaerdemozturk.com/portfolio" target="_blank" title="Taha Erdem Öztürk - Portfolio" aria-label="Taha Erdem Öztürk - Portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="https://c4sr.columbia.edu" title="Columbia University&#10;Center for Spatial Research" aria-label="Columbia University Center for Spatial Research" target="_blank">CSR</a></li>
+                    <li><a href="https://www.arch.columbia.edu" title="Columbia GSAPP" aria-label="Columbia GSAPP" target="_blank">Columbia GSAPP</a></li>
+                    <li><a href="https://brown.columbia.edu" title="The Brown Institute for Media Innovation" aria-label="The Brown Institute for Media Innovation" target="_blank">The Brown Institute</a></li>
+                </ul>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#" title="Donate" aria-label="Donate">Donate</a></li>
+                </ul>
+                <h3>Email</h3>
+                <ul>
+                    <li><a href="mailto:teo2109@columbia.edu" title="Email Taha Erdem Öztürk" aria-label="Email Taha Erdem Öztürk">teo2109@columbia.edu</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom nsc">
+                <p>&copy; 2024 AT THE FAULT LINES</p>
+                <p>CENTER FOR SPATIAL RESEARCH • COLUMBIA GSAPP</p>
+            </div>
+        </footer>
+        <script>
+            var docWidth = document.documentElement.offsetWidth;
+
+            [].forEach.call(
+            document.querySelectorAll('*'),
+            function(el) {
+                if (el.offsetWidth > docWidth) {
+                console.log(el);
+                }
+            }
+);
+        </script>
+    </body>
+</html>

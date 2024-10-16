@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>At the Fault Lines</title>
+
+        <meta name="application-name" content="FaultLines">
+        <meta name="A geospatial intelligence research project. Developed by Taha Erdem Ozturk at the Center for Spatial Research, Columbia GSAPP.">
+        <meta name="apple-mobile-web-app-title" content="FaultLines">
+        <meta name=”keywords” content="geospatial ai, ai, artificial intelligence, spatial research, architecture, earthquake, risk assessment, columbia gsapp">
+        <meta name=”author” content="Taha Erdem Ozturk">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "about": "A geospatial intelligence research project.",
+              "datePublished": "2024-05-29T08:00:00-04:00",
+              "dateModified": "2024-05-29T08:00:00-04:00",
+              "author": [{
+                  "@type": "Person",
+                  "name": "Taha Erdem Ozturk",
+                  "url": "https://tahaerdemozturk.com/"
+                },
+                {
+                   "@type": "Organization",
+                   "name": "Columbia University Center for Spatial Research",
+                   "url": "https://c4sr.columbia.edu"
+                }]
+            }
+        </script>
+        
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="theme-color" content="#FFFDDE" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#FFFDDE" media="(prefers-color-scheme: dark)">
+        <link rel="apple-touch-icon" href="/flWebmap/resources/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/flWebmap/resources/favicon/fl-favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/flWebmap/resources/favicon/fl-favicon-16.png">
+
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js'></script>
+
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="https://use.typekit.net/oew1nxa.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="navbar" id="navbar">
+            <div class="navbar-left">
+                <a href="/index.html" class="navbar-item-cu-short bib-nav-short ">At the<br>Fault Lines</a>
+                <a href="/index.html" class="navbar-item-cu-medium bib-nav-medium">At the Fault Lines</a>
+                <a href="/index.html" class="navbar-item-cu-long bib-nav-long">At the FaultLines</a>
+            </div>
+            <div class="navbar-right">
+                <a href="/index.html" class="navbar-item bib-nav bib-nav-rsc">Research</a>
+                <a href="/webmap.html" class="navbar-item bib-nav">Map</a>
+                <a href="/webmap.html" class="navbar-item bib-nav">Interactive Map</a>
+                <a href="/about.html" class="navbar-item bib-nav">About</a>
+            </div>
+        </header>        
+        <section class="title-header abt-header">
+            <h1 class="title-wrapper abt-title" id="abt-title">PLOT</h1><div id="overlay"></div>
+        </section>
+        <section class="title-wrapper about-wrapper">
+        </section>
+
+        <main>
+            <article>
+                <div class="text-container">
+                    <h3 class="title">Istanbul Maps</h3>
+                    <p>
+                        These maps represent the result of the 2021 study "Earthquake Scenario Analysis" conducted by the of Istanbul Metropolitan Municipality. The maps are then visualized to better illustrate the potential impacts of a possible earthquake in Istanbul showing the potential damage to buildings in each neighborhood, the extend of the damage, the number of buildings that will be damaged, and the number of people affected in the event of an earthquake.
+                    </p>
+                    <br><br>
+                </div>
+            </article>
+            <script src="https://d3js.org/d3.v6.min.js"></script>
+            <script src="https://unpkg.com/topojson@3"></script>
+            <article>
+                <div id="plot" class="plot-container xlct">
+                    <div class="controls-container" id="controls">
+                        <div><h3 class="plhdr" style="text-align:left">Istanbul</h3><br><div class="info">Hover over a county</div></div>
+                        <div class="toggles" id="toggles">
+                            <button class="toggle-bt toggle-pop" onclick="switchData('population')">Population</button>
+                            <button class="toggle-bt toggle-dt" onclick="switchData('death_toll')">Death Toll</button>
+                            <button class="toggle-bt toggle-sh" onclick="switchData('shelter')">Shelter</button>
+                        </div>
+                    </div>
+                    <div id="popup" class="popup"></div>
+                    <div id="plot01" class="cartography-container ist-p">
+                        <svg class="cartography-container ist-p">
+                            <g class="map"></g>
+                            <g class="bounding-box"><rect></rect></g>
+                            <g class="centroid"><circle r="4"></circle></g>
+                            <g class="boundary"></g>
+                        </svg>
+                    </div>  
+                </div>
+            </article>
+
+
+
+        </main>
+        
+        <div class="back-arrow" id="backArrow" onclick="moveTop()"></div>
+
+        <footer id="footer">
+            <div class="footer-section" id="footer-section">
+                <h3>Sections</h3>
+                <ul>
+                    <li><a href="#">At the Fault Lines</a></li>
+                    <li><a href="#">First Earthquake</a></li>
+                    <li><a href="#">Second Earthquake</a></li>
+                    <li><a href="#">East Anatolian Fault</a></li>
+                    <li><a href="#">North Anatolian Fault</a></li>
+                    <li><a href="#">1999 Earthquake</a></li>
+                    <li><a href="#">Istanbul Earthquake</a></li>
+                    <li><a href="#">Dissecting Collapses</a></li>
+                    <li><a href="#">AI + Computer Vision</a></li>
+                    <li><a href="#">Conclusion</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" id="footer-section">
+                <h3>Maps</h3>
+                <ul>
+                    <li><a href="#">Feb 6 Earthquakes</a></li>
+                    <li><a href="#">Past NAF Earthquakes</a></li>
+                    <li><a href="#">Istanbul Simulations</a></li>
+                </ul>
+        
+                <h3>Technologies</h3>
+                <ul>
+                    <li><a href="#">Mapbox</a></li>
+                    <li><a href="#">GroundingDINO</a></li>
+                    <li><a href="#">Segment Anything</a></li>
+                    <li><a href="#">Google StreetView API</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Research</h3>
+                <ul>
+                    <li><a href="#">Mentions</a></li>
+                    <li><a href="#">Contributors</a></li>
+                    <li><a href="#">Technologies</a></li>
+                    <li><a href="#">Organizations</a></li>
+                    <li><a href="#">Bibliography</a></li>
+                </ul>
+                <h3>Development</h3>
+                <ul>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Developer Blog</a></li>
+                    <li><a href="#">Open Source Libraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Datasets</h3>
+                <ul>
+                    <li><a href="#">USGS</a></li>
+                    <li><a href="#">OpenStreetMaps</a></li>
+                    <li><a href="#">Istanbul Open Data</a></li>
+                    <li><a href="#">Bogazici University</a></li>
+                    <li><a href="#">Global Earthquake Model</a></li>
+                    <li><a href="#">Columbia University CSR</a></li>
+                    <li><a href="#">FaultLines Open Data Repo</a></li>
+                    <li><a href="#">Istanbul Technical University</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>FaultLines</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Interactive Map</a></li>
+                    <li><a href="#">Venture Challenge</a></li>
+                    <li><a href="#">FaultLines on News</a></li>
+                </ul>
+                <h3>Taha Erdem Ozturk</h3>
+                <ul>
+                    <li><a href="#">Website</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">CSR</a></li>
+                    <li><a href="#">Columbia GSAPP</a></li>
+                    <li><a href="#">The Brown Institute</a></li>
+                </ul>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">teo2109@columbia.edu</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom nsc">
+                <p>&copy; 2024 AT THE FAULT LINES</p>
+                <p>CENTER FOR SPATIAL RESEARCH • COLUMBIA GSAPP</p>
+            </div>
+        </footer>
+
+        <script src="plot.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    </body>
+</html>
