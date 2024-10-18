@@ -748,6 +748,10 @@ h3.title.tertiary::after {
     margin: 0.6em 0 1em 0;
 }
 
+h3.tctrd {
+    text-align: center !important;
+}
+
 h3.title.new-container {
     margin-top: -5em;
 }
